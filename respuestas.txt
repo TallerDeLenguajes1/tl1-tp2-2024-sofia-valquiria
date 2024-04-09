@@ -1,0 +1,1 @@
+1) f) No se puede ver el archivo porque este existe en otra rama o version del programa.
