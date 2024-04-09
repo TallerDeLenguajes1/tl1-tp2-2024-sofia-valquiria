@@ -1,1 +1,5 @@
-1) f) No se puede ver el archivo porque este existe en otra rama o version del programa.
+1) f) I) No se puede ver el archivo porque este existe en otra rama o version del programa.
+
+II) La diferencia que noto al hacer un commit en la rama principal es que al hacerlo, las ramas se bifurcan en gitk.
+
+III) Luego de ejecutar el merge, las ramas se unifican, bajo la estrategia "ort"
