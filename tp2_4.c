@@ -21,22 +21,23 @@ void main(){
         compus->tipo_cpu = tipos[tipo];
     }
     compu* pCompus = compus;
-    void mostrarPCs(pCompus);    
+    mostrarPCs(pCompus);    
     
 }
 
 void mostrarPCs(compu* pCompus){
     for (int i = 0; i < 5; i++)
     {
-        printf("-------- Compu: %d --------", i+1);
+        printf("-------- Compu: %d --------\n", i+1);
         printf("Anio:");
-        printf("%d",pCompus->anio);
+        printf("%d\n",pCompus->anio);
         printf("Cantidad de nucleos:");
-        printf("%d",pCompus->cantidad);
+        printf("%d\n",pCompus->cantidad);
         printf("Velocidad:");
-        printf("%d",pCompus->velocidad);
+        printf("%d\n",pCompus->velocidad);
         printf("Tipo de CPU:");
-        printf("%s",pCompus->tipo_cpu);
+        printf("%s\n",pCompus->tipo_cpu);
+        pCompus++;
     }
     
 }
