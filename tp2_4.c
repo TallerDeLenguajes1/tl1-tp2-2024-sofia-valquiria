@@ -18,7 +18,7 @@ void main(){
         compus[i].velocidad = rand()%3 + 1;
         compus[i].cantidad =  rand()%8 + 1;
         int tipo = rand()%6;
-        compus->tipo_cpu = tipos[tipo];
+        compus[i].tipo_cpu = tipos[tipo];
     }
     compu* pCompus = compus;
     mostrarPCs(pCompus);    
