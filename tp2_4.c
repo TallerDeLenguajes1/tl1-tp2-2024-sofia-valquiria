@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
-
 struct{
+        int id;
         int velocidad;//entre 1 y 3 GHz
         int anio;//entre 2015 y 2023
         int cantidad;//entre 1 y 8
@@ -14,6 +14,7 @@ void main(){
     srand(time(NULL));
     for (int i = 0; i < 5; i++)
     {
+        compus[i].id = i+1;
         compus[i].anio = rand()%10 +2015;
         compus[i].velocidad = rand()%3 + 1;
         compus[i].cantidad =  rand()%8 + 1;
@@ -21,7 +22,9 @@ void main(){
         compus[i].tipo_cpu = tipos[tipo];
     }
     compu* pCompus = compus;
-    mostrarPCs(pCompus);    
+    mostrarPCs(pCompus);
+    buscarPCmasVieja(pCompus); 
+    buscarPCmasRapida(pCompus);   
     
 }
 
@@ -40,4 +43,36 @@ void mostrarPCs(compu* pCompus){
         pCompus++;
     }
     
+}
+
+void buscarPCmasVieja(compu* pCompus){
+    compu* compuMasVieja;
+    int edadMasVieja = 9999;
+    for (int i = 0; i < 5; i++)
+    {
+        
+        if (pCompus->anio<=edadMasVieja)
+        {
+            edadMasVieja = pCompus->anio;
+            compuMasVieja = pCompus;
+        }
+        pCompus++;
+    }
+    printf("La PC mas vieja es la: %d.\n", compuMasVieja->id);    
+}
+
+void buscarPCmasRapida(compu* pCompus){
+    compu* compuMasRapida;
+    int velocidadMasRapida = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        
+        if (pCompus->velocidad >=velocidadMasRapida)
+        {
+            velocidadMasRapida = pCompus->velocidad;
+            compuMasRapida = pCompus;
+        }
+        pCompus++;
+    }
+    printf("La PC mas rapida es la: %d.\n", compuMasRapida->id);    
 }
